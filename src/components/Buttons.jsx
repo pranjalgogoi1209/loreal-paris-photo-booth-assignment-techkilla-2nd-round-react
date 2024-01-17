@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import exportAsImage from "../utils/ExportAsImage";
 
-export default function Buttons({ setIsImgCaptured }) {
+export default function Buttons({
+  setIsImgCaptured,
+  downloadDiv,
+  isImgCaptured,
+}) {
   const btns = ["CAPTURE", "RETAKE", "POST", "SAVE"];
   const [selectedBtn, setSelectedBtn] = useState();
 
@@ -11,6 +16,10 @@ export default function Buttons({ setIsImgCaptured }) {
       setIsImgCaptured(true);
     } else if (e.target.innerText === "RETAKE") {
       setIsImgCaptured(false);
+    } else if (e.target.innerText == "SAVE") {
+      if (isImgCaptured) {
+        exportAsImage(downloadDiv, "loreal-paris-photo-booth");
+      }
     }
   };
   return (

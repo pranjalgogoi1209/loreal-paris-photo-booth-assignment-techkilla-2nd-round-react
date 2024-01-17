@@ -16,7 +16,6 @@ export default function RightPart() {
 }
 
 const RightPartWrapper = styled.div`
-  border: 1px solid black;
   width: 28.5%;
   height: 100%;
 `;
