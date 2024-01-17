@@ -14,7 +14,7 @@ export default function LeftPart() {
         isImgCaptured={isImgCaptured}
       />
       <span className="home">
-        <i class="fa-solid fa-house"></i>Home
+        <i className="fa-solid fa-house"></i>Home
       </span>
       <WebcamFrame
         isImgCaptured={isImgCaptured}
@@ -25,7 +25,6 @@ export default function LeftPart() {
 }
 
 const LeftPartWrapper = styled.div`
-  /* border: 1px solid black; */
   width: 72.5%;
   height: 100%;
   display: flex;
@@ -49,6 +48,5 @@ const LeftPartWrapper = styled.div`
     position: absolute;
     top: 10vw;
     left: 35vw;
-    /* overflow: hidden; */
   }
 `;

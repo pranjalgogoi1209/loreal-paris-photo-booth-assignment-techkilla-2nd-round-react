@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import exportAsImage from "../utils/ExportAsImage";
+import exportAsImage from "../utils/exportAsImage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Buttons({
   setIsImgCaptured,
@@ -9,6 +11,15 @@ export default function Buttons({
 }) {
   const btns = ["CAPTURE", "RETAKE", "POST", "SAVE"];
   const [selectedBtn, setSelectedBtn] = useState();
+
+  // toast options
+  const toastOptions = {
+    position: "bottom-left",
+    autoClose: 4000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
 
   const handleClick = (e, index) => {
     setSelectedBtn(index);
@@ -19,6 +30,9 @@ export default function Buttons({
     } else if (e.target.innerText == "SAVE") {
       if (isImgCaptured) {
         exportAsImage(downloadDiv, "loreal-paris-photo-booth");
+        toast.success("Your image is successfully downloaded", toastOptions);
+      } else {
+        toast.error("Please capture your image", toastOptions);
       }
     }
   };
@@ -43,17 +57,16 @@ export default function Buttons({
             </div>
           ))}
       </div>
+      <ToastContainer />
     </ButtonsWrapper>
   );
 }
 
 const ButtonsWrapper = styled.div`
   .btns-container {
-    /* width: 83.5%; */
     width: 64%;
     right: 24.2vw;
     top: 16vw;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     gap: 1.5vw;
@@ -78,8 +91,10 @@ const ButtonsWrapper = styled.div`
         cursor: pointer;
         background-color: rgba(241, 241, 241, 0.7);
         transition: background-color ease 0.5s;
+        position: relative;
       }
     }
+
     .selected-btn {
       border-color: #f1f1f1;
       button {
