@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function Buttons() {
+export default function Buttons({ setIsImgCaptured }) {
   const btns = ["CAPTURE", "RETAKE", "POST", "SAVE"];
   const [selectedBtn, setSelectedBtn] = useState();
 
-  const handleClick = index => {
+  const handleClick = (e, index) => {
     setSelectedBtn(index);
+    if (e.target.innerText === "CAPTURE") {
+      setIsImgCaptured(true);
+    } else if (e.target.innerText === "RETAKE") {
+      setIsImgCaptured(false);
+    }
   };
   return (
     <ButtonsWrapper>
@@ -14,7 +19,7 @@ export default function Buttons() {
         {btns &&
           btns.map((btn, index) => (
             <div
-              onClick={() => handleClick(index)}
+              onClick={e => handleClick(e, index)}
               key={index}
               id={
                 index === 2

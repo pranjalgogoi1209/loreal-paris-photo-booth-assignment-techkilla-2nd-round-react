@@ -1,11 +1,14 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Buttons from "./Buttons";
+import WebcamFrame from "./WebcamFrame";
 
 export default function LeftPart() {
+  const [isImgCaptured, setIsImgCaptured] = useState(false);
   return (
     <LeftPartWrapper>
-      <Buttons />
+      <Buttons setIsImgCaptured={setIsImgCaptured} />
+      <WebcamFrame isImgCaptured={isImgCaptured} />
     </LeftPartWrapper>
   );
 }
@@ -17,4 +20,11 @@ const LeftPartWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  .webcam {
+    position: absolute;
+    top: 10vw;
+    left: 35vw;
+    /* overflow: hidden; */
+  }
 `;
