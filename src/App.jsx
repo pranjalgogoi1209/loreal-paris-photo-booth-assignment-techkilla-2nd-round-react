@@ -15,5 +15,6 @@ const AppWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
 `;
