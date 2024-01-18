@@ -42,7 +42,6 @@ export default function Buttons({
         {btns &&
           btns.map((btn, index) => (
             <div
-              onClick={e => handleClick(e, index)}
               key={index}
               id={
                 index === 2
@@ -53,7 +52,7 @@ export default function Buttons({
               }
               className={`btn ${index === selectedBtn ? "selected-btn" : ""}`}
             >
-              <button>{btn}</button>
+              <button onClick={e => handleClick(e, index)}>{btn}</button>
             </div>
           ))}
       </div>
