@@ -60,7 +60,7 @@ const WebcamWrapper = styled.div`
     .captured-img {
       margin-top: 0.2vh;
       position: absolute;
-      transform: scale(1.63, 1.001);
+      transform: scale(1.64, 1.001);
       top: 0;
       left: 0;
       height: 100%;
