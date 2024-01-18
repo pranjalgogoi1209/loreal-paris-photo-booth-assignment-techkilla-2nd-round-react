@@ -64,7 +64,6 @@ export default function Buttons({
 
 const ButtonsWrapper = styled.div`
   .btns-container {
-    border: 1px solid black;
     width: 63.5%;
     right: 24.55vw;
     top: 16vw;
@@ -73,7 +72,7 @@ const ButtonsWrapper = styled.div`
     gap: 1.5vw;
     position: absolute;
     .btn {
-      border-bottom: 0.5vh solid rgba(241, 241, 241, 0.7);
+      border-bottom: 0.4vh solid rgba(241, 241, 241, 0.7);
       width: 100%;
       transition: border-color ease 0.5s;
       button {

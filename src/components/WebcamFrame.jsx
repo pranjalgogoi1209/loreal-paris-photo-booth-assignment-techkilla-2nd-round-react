@@ -24,7 +24,7 @@ export default function WebcamFrame({ isImgCaptured, setDownloadDiv }) {
   return (
     <WebcamWrapper className="webcam" ref={exportRef}>
       <div className="webcam-container">
-        <Webcam id="webcam" ref={webRef} />
+        <Webcam id="webcam" ref={webRef} forceScreenshotSourceSize={true} />
         {capturedImg && (
           <img src={capturedImg} alt="captured-img" className="captured-img" />
         )}
@@ -42,6 +42,7 @@ const WebcamWrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   box-shadow: -0.1vw 0.3vw 0.5vw rgba(31, 31, 31, 0.4);
+  background-color: #f4695a;
   .webcam-container {
     display: flex;
     justify-content: center;
@@ -54,10 +55,12 @@ const WebcamWrapper = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      margin-top: 0.2vh;
     }
     .captured-img {
+      margin-top: 0.2vh;
       position: absolute;
-      transform: scale(1.64, 1.001);
+      transform: scale(1.63, 1.001);
       top: 0;
       left: 0;
       height: 100%;
@@ -65,7 +68,7 @@ const WebcamWrapper = styled.div`
     }
   }
   .frame {
-    width: 103%;
+    width: 104%;
     height: 103%;
     position: absolute;
     top: 0;
