@@ -25,6 +25,7 @@ export default function LeftPart() {
 }
 
 const LeftPartWrapper = styled.div`
+  /* border: 1px solid black; */
   width: 72.5%;
   height: 100%;
   display: flex;

@@ -64,8 +64,8 @@ export default function Buttons({
 
 const ButtonsWrapper = styled.div`
   .btns-container {
-    width: 64%;
-    right: 24.2vw;
+    width: 63.5%;
+    right: 24.55vw;
     top: 16vw;
     display: flex;
     flex-direction: column;
@@ -102,10 +102,10 @@ const ButtonsWrapper = styled.div`
       }
     }
     #exceptional-btn-one {
-      width: 99.6%;
+      width: 99.5%;
     }
     #exceptional-btn-two {
-      width: 94%;
+      width: 98.5%;
     }
   }
 `;
